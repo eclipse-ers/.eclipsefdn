@@ -16,4 +16,32 @@ orgs.newOrg('technology.ers', 'eclipse-ers') {
       default_workflow_permissions: "write",
     },
   },
+  _repositories+:: [
+    orgs.newRepo('website') {
+      allow_merge_commit: true,
+      allow_update_branch: false,
+      delete_branch_on_merge: false,
+      description: "Readability Studio website",
+      web_commit_signoff_required: false,
+    },
+   orgs.newRepo('website-source') {
+      allow_merge_commit: true,
+      allow_update_branch: false,
+      delete_branch_on_merge: false,
+      description: "Readability Studio website source",
+      web_commit_signoff_required: false,
+    },
+   orgs.newRepo('ReadabilityStudio') {
+      allow_merge_commit: true,
+      allow_update_branch: false,
+      delete_branch_on_merge: false,
+      description: "Readability Studio project",
+      web_commit_signoff_required: false,
+    },
+  ],
+} + {
+  # snippet added due to 'https://github.com/EclipseFdn/otterdog-configs/blob/main/blueprints/add-dot-github-repo.yml'
+  _repositories+:: [
+    orgs.newRepo('.github')
+  ],
 }
