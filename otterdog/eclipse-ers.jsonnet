@@ -21,22 +21,29 @@ orgs.newOrg('technology.ers', 'eclipse-ers') {
       allow_merge_commit: true,
       allow_update_branch: false,
       delete_branch_on_merge: false,
-      description: "Readability Studio website",
+      description: "Eclipse Readability Studio website",
       web_commit_signoff_required: false,
     },
    orgs.newRepo('website-source') {
       allow_merge_commit: true,
       allow_update_branch: false,
       delete_branch_on_merge: false,
-      description: "Readability Studio website source",
+      description: "Eclipse Readability Studio website source",
       web_commit_signoff_required: false,
     },
    orgs.newRepo('ReadabilityStudio') {
       allow_merge_commit: true,
       allow_update_branch: false,
+      code_scanning_default_setup_enabled: true,
+      code_scanning_default_languages: ["actions", "c-cpp"],
       delete_branch_on_merge: false,
-      description: "Readability Studio project",
+      description: "Eclipse Readability Studio",
       web_commit_signoff_required: false,
+      secrets+: [
+        orgs.newRepoSecret('SIGNPATH_API_TOKEN') {
+          value: "pass:bots/technology.ers/signpath.io/api-token",
+        },
+      ],
     },
   ],
 } + {
