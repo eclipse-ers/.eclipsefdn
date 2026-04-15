@@ -16,6 +16,17 @@ orgs.newOrg('technology.ers', 'eclipse-ers') {
       default_workflow_permissions: "write",
     },
   },
+  secrets+: [
+    orgs.newOrgSecret('GPG_KEY_ID') {
+      value: "pass:bots/technology.ers/gpg/key_id",
+    },
+    orgs.newOrgSecret('GPG_PASSPHRASE') {
+      value: "pass:bots/technology.ers/gpg/passphrase",
+    },
+    orgs.newOrgSecret('GPG_PRIVATE_KEY') {
+      value: "pass:bots/technology.ers/gpg/secret-subkeys.asc",
+    },
+  ],
   _repositories+:: [
     orgs.newRepo('website') {
       allow_merge_commit: true,
