@@ -26,13 +26,13 @@ orgs.newOrg('technology.ers', 'eclipse-ers') {
     orgs.newOrgSecret('GPG_PRIVATE_KEY') {
       value: "pass:bots/technology.ers/gpg/secret-subkeys.asc",
     },
-    orgs.newOrgSecret('APPLE_NOTARIZATION_ASC_KEY_ID') {
+    orgs.newOrgSecret('ASC_KEY_ID') {
       value: "pass:bots/technology.ers/signpath.io/asc-key",
     },
-    orgs.newOrgSecret('APPLE_NOTARIZATION_ASC_ISSUER_ID') {
+    orgs.newOrgSecret('ASC_ISSUER_ID') {
       value: "pass:bots/technology.ers/signpath.io/asc-issuer-id",
     },
-    orgs.newOrgSecret('APPLE_NOTARIZATION_ASC_KEY_P8_BASE64') {
+    orgs.newOrgSecret('ASC_KEY_P8_BASE64') {
       value: "pass:bots/technology.ers/signpath.io/asc-key-p8-base64",
     },
   ],
